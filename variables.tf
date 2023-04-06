@@ -1,4 +1,4 @@
 variable "spotify_api_key" {
-  description = "API KEY GENERADA CON EL DOCKER QUE LEVANTAMOS /bin/bash docker-run.sh"
+  description = "La Key se genera con el docker -> no te olvides de generar el archivo .env -> /bin/bash docker-run.sh"
   type        = string
 }

@@ -3,12 +3,14 @@
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_null"></a> [null](#requirement\_null) | ~> 3.2.1 |
 | <a name="requirement_spotify"></a> [spotify](#requirement\_spotify) | 0.2.7 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
+| <a name="provider_null"></a> [null](#provider\_null) | 3.2.1 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.4.3 |
 | <a name="provider_spotify"></a> [spotify](#provider\_spotify) | 0.2.7 |
 
@@ -20,6 +22,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [null_resource.env-spotify](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [random_shuffle.tracks_shuffle](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle) | resource |
 | [spotify_playlist.playlist](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/resources/playlist) | resource |
 | [spotify_playlist.playlist_shuffle](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/resources/playlist) | resource |
@@ -32,7 +35,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_spotify_api_key"></a> [spotify\_api\_key](#input\_spotify\_api\_key) | API KEY GENERADA CON EL DOCKER QUE LEVANTAMOS /bin/bash docker-run.sh | `string` | n/a | yes |
+| <a name="input_spotify_api_key"></a> [spotify\_api\_key](#input\_spotify\_api\_key) | La Key se genera con el docker -> no te olvides de generar el archivo .env -> /bin/bash docker-run.sh | `string` | n/a | yes |
 
 ## Outputs
 
