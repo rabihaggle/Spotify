@@ -36,6 +36,8 @@ output "morat" {
 }
 
 resource "random_shuffle" "tracks_shuffle" {
+  # flatten takes a list and replaces any elements that are lists with a flattened sequence of the list contents.
+  # Por ejemplo flatten([["a", "b"], [], ["c"]]) --> ["a", "b", "c"]
   input = flatten([
     data.spotify_search_track.BEP.tracks[4].id,
     data.spotify_search_track.BEP.tracks[7].id,
@@ -53,23 +55,10 @@ resource "random_shuffle" "tracks_shuffle" {
 
 resource "spotify_playlist" "playlist" {
   name        = "Playlist Terraform sin parar"
-  description = "Creacion de playlist usando el provider de Terraform"
+  description = "Code in -> https://github.com/rabihaggle/Spotify"
   public      = true
 
-  # flatten takes a list and replaces any elements that are lists with a flattened sequence of the list contents.
-  # Por ejemplo flatten([["a", "b"], [], ["c"]]) --> ["a", "b", "c"]
-  tracks = flatten([
-    data.spotify_search_track.BEP.tracks[4].id,
-    data.spotify_search_track.BEP.tracks[7].id,
-    data.spotify_search_track.BEP.tracks[2].id,
-    data.spotify_search_track.BEP.tracks[5].id,
-    data.spotify_search_track.RH.tracks[1].id,
-    data.spotify_search_track.RH.tracks[2].id,
-    data.spotify_search_track.RH.tracks[6].id,
-    data.spotify_search_track.RH.tracks[9].id,
-    data.spotify_search_track.Morat.tracks[*].id,
-    data.spotify_search_track.NTVG.tracks[*].id,
-  ])
+  tracks = resource.random_shuffle.tracks_shuffle.input
 
 }
 resource "spotify_playlist" "playlist_shuffle" {
@@ -77,9 +66,7 @@ resource "spotify_playlist" "playlist_shuffle" {
   description = "Code in -> https://github.com/rabihaggle/Spotify"
   public      = true
 
-  # flatten takes a list and replaces any elements that are lists with a flattened sequence of the list contents.
-  # Por ejemplo flatten([["a", "b"], [], ["c"]]) --> ["a", "b", "c"]
-  tracks = resource.random_shuffle.tracks_shuffle.input
+  tracks = resource.random_shuffle.tracks_shuffle.result
 
 }
 
