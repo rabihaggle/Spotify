@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+    conradludgate:
+        image: ghcr.io/conradludgate/spotify-auth-proxy
+        env_file:
+            - ./spotify.env
+        ports:
+            - '27228:27228'
+        tty: true
+        stdin_open: true
