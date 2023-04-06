@@ -8,4 +8,3 @@ resource "local_file" "config_file" {
     }
   )
 }
-
