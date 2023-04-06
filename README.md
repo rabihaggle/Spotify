@@ -3,7 +3,6 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_null"></a> [null](#requirement\_null) | ~> 3.2.1 |
 | <a name="requirement_spotify"></a> [spotify](#requirement\_spotify) | 0.2.7 |
 
 ## Providers
