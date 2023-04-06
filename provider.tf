@@ -4,10 +4,7 @@ terraform {
       source  = "conradludgate/spotify"
       version = "0.2.7"
     }
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.2.1"
-    }
+
   }
 
 }
