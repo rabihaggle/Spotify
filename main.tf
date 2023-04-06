@@ -35,6 +35,22 @@ output "morat" {
   value = data.spotify_search_track.Morat
 }
 
+resource "random_shuffle" "tracks_shuffle" {
+  input = flatten([
+    data.spotify_search_track.BEP.tracks[4].id,
+    data.spotify_search_track.BEP.tracks[7].id,
+    data.spotify_search_track.BEP.tracks[2].id,
+    data.spotify_search_track.BEP.tracks[5].id,
+    data.spotify_search_track.RH.tracks[1].id,
+    data.spotify_search_track.RH.tracks[2].id,
+    data.spotify_search_track.RH.tracks[6].id,
+    data.spotify_search_track.RH.tracks[9].id,
+    data.spotify_search_track.Morat.tracks[*].id,
+    data.spotify_search_track.NTVG.tracks[*].id,
+  ])
+
+}
+
 resource "spotify_playlist" "playlist" {
   name        = "Playlist Terraform sin parar"
   description = "Creacion de playlist usando el provider de Terraform"
@@ -54,6 +70,16 @@ resource "spotify_playlist" "playlist" {
     data.spotify_search_track.Morat.tracks[*].id,
     data.spotify_search_track.NTVG.tracks[*].id,
   ])
+
+}
+resource "spotify_playlist" "playlist_shuffle" {
+  name        = "Playlist Terraform -> Shuffle"
+  description = "Code in -> https://github.com/rabihaggle/Spotify"
+  public      = true
+
+  # flatten takes a list and replaces any elements that are lists with a flattened sequence of the list contents.
+  # Por ejemplo flatten([["a", "b"], [], ["c"]]) --> ["a", "b", "c"]
+  tracks = resource.random_shuffle.tracks_shuffle.input
 
 }
 
