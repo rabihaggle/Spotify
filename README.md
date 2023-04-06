@@ -29,6 +29,8 @@ No modules.
 | [spotify_search_track.Morat](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/data-sources/search_track) | data source |
 | [spotify_search_track.NTVG](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/data-sources/search_track) | data source |
 | [spotify_search_track.RH](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/data-sources/search_track) | data source |
+| [spotify_search_track.search_album](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/data-sources/search_track) | data source |
+| [spotify_search_track.search_album_arg](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/data-sources/search_track) | data source |
 
 ## Inputs
 
@@ -36,14 +38,12 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_SPOTIFY_CLIENT_ID"></a> [SPOTIFY\_CLIENT\_ID](#input\_SPOTIFY\_CLIENT\_ID) | Tu id generado en developer.spotify | `string` | `"Tu id generado en developer.spotify"` | no |
 | <a name="input_SPOTIFY_CLIENT_SECRET"></a> [SPOTIFY\_CLIENT\_SECRET](#input\_SPOTIFY\_CLIENT\_SECRET) | Tu secreto generado en developer.spotify | `string` | `"Tu secreto generado en developer.spotify"` | no |
-| <a name="input_spotify_api_key"></a> [spotify\_api\_key](#input\_spotify\_api\_key) | La Key se genera con el docker -> no te olvides de generar el archivo .env -> /bin/bash docker-run.sh | `string` | n/a | yes |
+| <a name="input_spotify_api_key"></a> [spotify\_api\_key](#input\_spotify\_api\_key) | La Key se genera con el docker -> no te olvides del archivo que esta en ./ENV/spotify.env -> /bin/bash docker-run.sh | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_NTV"></a> [NTV](#output\_NTV) | Los datos de NTV -> limit 10 |
 | <a name="output_Red_Hot"></a> [Red\_Hot](#output\_Red\_Hot) | Miremos lo que hay adentro! |
-| <a name="output_morat"></a> [morat](#output\_morat) | Mostramos todo el album del artista/grupo |
 | <a name="output_playlist_url"></a> [playlist\_url](#output\_playlist\_url) | Link a nuestra playlist |
 <!-- END_TF_DOCS -->

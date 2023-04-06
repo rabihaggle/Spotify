@@ -1,26 +1,34 @@
+#Buscamos los album que contengan Dramland y establecemos el limit 30
+data "spotify_search_track" "search_album" {
+  album = "Dreamland"
+  limit = 30
+}
+
+data "spotify_search_track" "search_album_arg" {
+  album = "rock nacional argentino de los 80"
+  limit = 30
+}
+
 #Buscamos la discografia del artista
 data "spotify_search_track" "BEP" {
   artist = "Black Eyed Peas"
+  limit  = 30
 }
 
 #Buscamos la discografia del artista
 data "spotify_search_track" "RH" {
   artist = "Red Hot Chili Peppers"
+  limit  = 30
 }
 #Miremos lo que hay adentro!
 output "Red_Hot" {
-  value = data.spotify_search_track.RH
+  value = data.spotify_search_track.BEP.limit
 }
 
-#Buscamos un artista pero con un limite
+#Buscamos un artista pero con un limite tracks
 data "spotify_search_track" "NTVG" {
   artist = "No Te Va Gustar"
   limit  = 10
-}
-
-#Los datos de NTV -> limit 10
-output "NTV" {
-  value = data.spotify_search_track.NTVG
 }
 
 
@@ -30,10 +38,7 @@ data "spotify_search_track" "Morat" {
   album  = "Sobre el amor y sus efectos secundarios"
 }
 
-#Mostramos todo el album del artista/grupo
-output "morat" {
-  value = data.spotify_search_track.Morat
-}
+
 
 resource "random_shuffle" "tracks_shuffle" {
   # flatten takes a list and replaces any elements that are lists with a flattened sequence of the list contents.
@@ -49,6 +54,8 @@ resource "random_shuffle" "tracks_shuffle" {
     data.spotify_search_track.RH.tracks[9].id,
     data.spotify_search_track.Morat.tracks[*].id,
     data.spotify_search_track.NTVG.tracks[*].id,
+    data.spotify_search_track.search_album.tracks[*].id,
+    data.spotify_search_track.search_album_arg.tracks[*].id,
   ])
 
 }
