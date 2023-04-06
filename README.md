@@ -10,7 +10,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_null"></a> [null](#provider\_null) | 3.2.1 |
+| <a name="provider_local"></a> [local](#provider\_local) | 2.4.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.4.3 |
 | <a name="provider_spotify"></a> [spotify](#provider\_spotify) | 0.2.7 |
 
@@ -22,7 +22,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [null_resource.env-spotify](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [local_file.config_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
 | [random_shuffle.tracks_shuffle](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle) | resource |
 | [spotify_playlist.playlist](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/resources/playlist) | resource |
 | [spotify_playlist.playlist_shuffle](https://registry.terraform.io/providers/conradludgate/spotify/0.2.7/docs/resources/playlist) | resource |
