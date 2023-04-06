@@ -29,14 +29,14 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_spotify_api_key"></a> [spotify\_api\_key](#input\_spotify\_api\_key) | value | `string` | n/a | yes |
+| <a name="input_spotify_api_key"></a> [spotify\_api\_key](#input\_spotify\_api\_key) | API KEY GENERADA CON EL DOCKER QUE LEVANTAMOS /bin/bash docker-run.sh | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_NTV"></a> [NTV](#output\_NTV) | n/a |
+| <a name="output_NTV"></a> [NTV](#output\_NTV) | Los datos de NTV -> limit 10 |
 | <a name="output_Red_Hot"></a> [Red\_Hot](#output\_Red\_Hot) | Miremos lo que hay adentro! |
-| <a name="output_morat"></a> [morat](#output\_morat) | Miremos que hay adentro! |
+| <a name="output_morat"></a> [morat](#output\_morat) | Mostramos todo el album del artista/grupo |
 | <a name="output_playlist_url"></a> [playlist\_url](#output\_playlist\_url) | Link a nuestra playlist |
 <!-- END_TF_DOCS -->

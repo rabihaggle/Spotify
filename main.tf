@@ -12,12 +12,13 @@ output "Red_Hot" {
   value = data.spotify_search_track.RH
 }
 
-# Buscamos un artista pero con un limite
+#Buscamos un artista pero con un limite
 data "spotify_search_track" "NTVG" {
   artist = "No Te Va Gustar"
   limit  = 10
 }
 
+#Los datos de NTV -> limit 10
 output "NTV" {
   value = data.spotify_search_track.NTVG
 }
@@ -28,7 +29,8 @@ data "spotify_search_track" "Morat" {
   artist = "Morat"
   album  = "Sobre el amor y sus efectos secundarios"
 }
-#Miremos que hay adentro!
+
+#Mostramos todo el album del artista/grupo
 output "morat" {
   value = data.spotify_search_track.Morat
 }
