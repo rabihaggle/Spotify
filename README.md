@@ -35,6 +35,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_SPOTIFY_CLIENT_ID"></a> [SPOTIFY\_CLIENT\_ID](#input\_SPOTIFY\_CLIENT\_ID) | Tu id generado en developer.spotify | `string` | `"Tu id generado en developer.spotify"` | no |
+| <a name="input_SPOTIFY_CLIENT_SECRET"></a> [SPOTIFY\_CLIENT\_SECRET](#input\_SPOTIFY\_CLIENT\_SECRET) | Tu secreto generado en developer.spotify | `string` | `"Tu secreto generado en developer.spotify"` | no |
 | <a name="input_spotify_api_key"></a> [spotify\_api\_key](#input\_spotify\_api\_key) | La Key se genera con el docker -> no te olvides de generar el archivo .env -> /bin/bash docker-run.sh | `string` | n/a | yes |
 
 ## Outputs
