@@ -1,24 +1,27 @@
 #Buscamos los album que contengan Dramland y establecemos el limit 30
 data "spotify_search_track" "search_album" {
-  album = "Dreamland"
-  limit = 30
+  album = "rock argentino 00"
+  limit = 10
 }
 
 data "spotify_search_track" "search_album_arg" {
-  album = "rock nacional argentino de los 80"
-  limit = 30
+  album = "rock argentino 90"
+  limit = 40
 }
-
+data "spotify_search_track" "search_album_arg_rock" {
+  album = "rock argentino"
+  limit = 40
+}
 #Buscamos la discografia del artista
 data "spotify_search_track" "BEP" {
-  artist = "Black Eyed Peas"
-  limit  = 30
+  artist = "era"
+  limit  = 10
 }
 
 #Buscamos la discografia del artista
 data "spotify_search_track" "RH" {
   artist = "Red Hot Chili Peppers"
-  limit  = 30
+  limit  = 10
 }
 #Miremos lo que hay adentro!
 output "Red_Hot" {
@@ -28,7 +31,7 @@ output "Red_Hot" {
 #Buscamos un artista pero con un limite tracks
 data "spotify_search_track" "NTVG" {
   artist = "No Te Va Gustar"
-  limit  = 10
+  limit  = 15
 }
 
 
@@ -44,18 +47,13 @@ resource "random_shuffle" "tracks_shuffle" {
   # flatten takes a list and replaces any elements that are lists with a flattened sequence of the list contents.
   # Por ejemplo flatten([["a", "b"], [], ["c"]]) --> ["a", "b", "c"]
   input = flatten([
-    data.spotify_search_track.BEP.tracks[4].id,
-    data.spotify_search_track.BEP.tracks[7].id,
-    data.spotify_search_track.BEP.tracks[2].id,
-    data.spotify_search_track.BEP.tracks[5].id,
-    data.spotify_search_track.RH.tracks[1].id,
-    data.spotify_search_track.RH.tracks[2].id,
-    data.spotify_search_track.RH.tracks[6].id,
-    data.spotify_search_track.RH.tracks[9].id,
+    data.spotify_search_track.BEP.tracks[*].id,
+    data.spotify_search_track.RH.tracks[*].id,
     data.spotify_search_track.Morat.tracks[*].id,
     data.spotify_search_track.NTVG.tracks[*].id,
     data.spotify_search_track.search_album.tracks[*].id,
     data.spotify_search_track.search_album_arg.tracks[*].id,
+    data.spotify_search_track.search_album_arg_rock.tracks[*].id
   ])
 
 }
